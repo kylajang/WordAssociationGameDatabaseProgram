@@ -14,7 +14,7 @@ project1:
 		&& chmod +x $@
 
 make:	project1
-	$(PART1_EXE_PATH)
+	$(PART1_EXE_PATH) "$(DEFAULT_DATAFILE_NAME)"
 
 clean:
 	rm $(PART1_EXE_PATH)
