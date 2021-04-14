@@ -2,18 +2,18 @@ CC := g++
 CFLAGS := -Wall -pedantic --std=c++17
 
 # My Variables
-	PART1_EXE_NAME := boba
+	PART1_EXE_NAME := project1
 	PART1_EXE_PATH := ./$(PART1_EXE_NAME)
-	DEFAULT_DATAFILE_NAME := names.db
+	DEFAULT_DATAFILE_NAME := words.db
 
 # Targets
 
-boba:
+project1:
 	@echo Building $@
 	$(CC) $(CFLAGS) main.cpp -o $@ \
 		&& chmod +x $@
 
-make:	boba
+make:	project1
 	$(PART1_EXE_PATH)
 
 clean:
