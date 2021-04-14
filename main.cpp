@@ -6,7 +6,7 @@ using std::cin;
 
 int main(){
 	char answer;
-	cout << "Welcome to the Word Association Game database Porject!!" << endl;
+	cout << "Welcome to the Word Association Game database Program!! This program will let you choose two words per entry and assign a number of association to them " << endl;
 	cout << "Would you like to clear your database?" << endl;
 	cin >> answer;
 
