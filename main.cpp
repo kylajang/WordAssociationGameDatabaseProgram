@@ -23,8 +23,26 @@ int main(){
 	{
 		cout << "Now creating new database entry "
 			<< current_word_position << " of "
-			<< total_words_added;
+			<< total_words_added << endl;
+		
+		cout << "When inputting a new entry, please do not use spaces or non alpha-numeric characters.\n";
+		cout << "Please enter the first word: ";
+		cin >> ;
+		
+		cout << "Please enter the second word: ";
+		cin >> ;
+		
+		cout << "Please enter the point value for this association: ";
+		cin >> ;
 	
+	}
+	
+	/*if statment will print message letting users know they have finished
+	entering new records to the database file if they have inputted the
+	amount of records they said they would*/
+	if (current_word_position == total_words_added)
+	{
+		cout << "We've finished adding new records to the database.\n";
 	}
 	
 	
