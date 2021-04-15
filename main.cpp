@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using std::cout;
 using std::endl;
@@ -10,23 +11,14 @@ int main(){
 	cout << "Would you like to clear your database?" << endl;
 	cin >> answer;
 
-<<<<<<< HEAD
 	if (answer=="y"||"Y"){
 		cout << "Okay, deleting the database!" << endl;
 		int answer2;
 		cout << "How many entries would you like to add? ==> ";
 		cin >> answer2;
-		for (i=1;i<=answer2;i++){
-			cout << "Now creating new database entry " << i << " of " << answer2;
-			//Stephan's part
-		}
-	}
-	else{
-
 	}
 
 
-=======
 	//Here the program begins accepting new entries to the database
 	
 	/* Ana, I put these variable names for now, I can change them to what
@@ -52,6 +44,7 @@ int main(){
 		cout << "Please enter the point value for this association: ";
 		cin >> ;
 	
+		current_word_position++;
 	}
 	
 	/*if statment will print message letting users know they have finished
@@ -63,6 +56,6 @@ int main(){
 	}
 	
 	
->>>>>>> 16fa7281f8ea62f311e9d88e51af37becf2c089b
 	return 0;
+	
 }
