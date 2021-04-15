@@ -11,17 +11,26 @@ using std::cin;
 
 int main(){
 	char answer;
+	//Welcome message and description of program
 	cout << "Welcome to the Word Association Game database Program!! This program will let you choose two words per entry and assign them a number of how closely or remotely associated they are to each other." << endl;
 	cout << "Would you like to clear your database?" << endl;
 	cin >> answer;
 
+<<<<<<< HEAD
+	if (answer=='y'||'Y'){
+		cout << "Okay, deleting the database!" << endl;
+=======
 	if (answer=='y'||'Y') {
 		cout << "Okay, deleting the database!" << endl;
 		int answer2;
 		cout << "How many entries would you like to add? ==> ";
 		cin >> answer2;
+>>>>>>> 19a4e46c21da3eff6aabf4bcf13dff9a68692044
 	}
 
+	int answer2;
+	cout << "How many entries would you like to add? ==> ";
+	cin >> answer2;
 
 	//Here the program begins accepting new entries to the database
 	
@@ -72,8 +81,11 @@ int main(){
 		cout << "We've finished adding new records to the database.\n";
 	}
 	
+<<<<<<< HEAD
+=======
 
 	
+>>>>>>> 19a4e46c21da3eff6aabf4bcf13dff9a68692044
 	return 0;
 	
 }
