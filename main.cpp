@@ -1,4 +1,9 @@
 #include <iostream>
+#include <string>
+#include <iomanip>
+#include <algorithm>
+#include <fstream>
+
 
 using std::cout;
 using std::endl;
@@ -11,8 +16,16 @@ int main(){
 	cout << "Would you like to clear your database?" << endl;
 	cin >> answer;
 
+<<<<<<< HEAD
 	if (answer=='y'||'Y'){
 		cout << "Okay, deleting the database!" << endl;
+=======
+	if (answer=='y'||'Y') {
+		cout << "Okay, deleting the database!" << endl;
+		int answer2;
+		cout << "How many entries would you like to add? ==> ";
+		cin >> answer2;
+>>>>>>> 19a4e46c21da3eff6aabf4bcf13dff9a68692044
 	}
 
 	int answer2;
@@ -26,6 +39,10 @@ int main(){
 	
 	int current_word_position;
 	int total_words_added;
+	std::vector<std::string> words_and_score;
+	std::string word1;
+	std::string word2;
+	std::string score;
 	
 	//This while loop will allow the user to enter their words until done
 	while (current_word_position <= total_words_added)
@@ -36,14 +53,24 @@ int main(){
 		
 		cout << "When inputting a new entry, please do not use spaces or non alpha-numeric characters.\n";
 		cout << "Please enter the first word: ";
-		cin >> ;
+		cin >> word1;
 		
 		cout << "Please enter the second word: ";
-		cin >> ;
+		cin >> word2;
 		
 		cout << "Please enter the point value for this association: ";
-		cin >> ;
+		cin >> score;
 	
+		words_and_score.push_back(word1);
+		words_and_score.push_back(word2);
+		words_and_score.push_back(score);
+		
+		//cout << words_and_score << endl;
+		
+	//file << name_one << endl;  (this is template)
+		/*file << words_and_score[index] << endl; */
+	
+		current_word_position++;
 	}
 	
 	/*if statment will print message letting users know they have finished
@@ -54,5 +81,11 @@ int main(){
 		cout << "We've finished adding new records to the database.\n";
 	}
 	
+<<<<<<< HEAD
+=======
+
+	
+>>>>>>> 19a4e46c21da3eff6aabf4bcf13dff9a68692044
 	return 0;
+	
 }
