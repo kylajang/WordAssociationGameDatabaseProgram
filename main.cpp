@@ -6,27 +6,19 @@ using std::cin;
 
 int main(){
 	char answer;
+	//Welcome message and description of program
 	cout << "Welcome to the Word Association Game database Program!! This program will let you choose two words per entry and assign them a number of how closely or remotely associated they are to each other." << endl;
 	cout << "Would you like to clear your database?" << endl;
 	cin >> answer;
 
-<<<<<<< HEAD
-	if (answer=="y"||"Y"){
+	if (answer=='y'||'Y'){
 		cout << "Okay, deleting the database!" << endl;
-		int answer2;
-		cout << "How many entries would you like to add? ==> ";
-		cin >> answer2;
-		for (i=1;i<=answer2;i++){
-			cout << "Now creating new database entry " << i << " of " << answer2;
-			//Stephan's part
-		}
-	}
-	else{
-
 	}
 
+	int answer2;
+	cout << "How many entries would you like to add? ==> ";
+	cin >> answer2;
 
-=======
 	//Here the program begins accepting new entries to the database
 	
 	/* Ana, I put these variable names for now, I can change them to what
@@ -62,7 +54,5 @@ int main(){
 		cout << "We've finished adding new records to the database.\n";
 	}
 	
-	
->>>>>>> 16fa7281f8ea62f311e9d88e51af37becf2c089b
 	return 0;
 }
