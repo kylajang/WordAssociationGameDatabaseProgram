@@ -28,7 +28,7 @@ int main(){
 	/* Ana, I put these variable names for now, I can change them to what
 	you name them in your section or you can use these names if you want */
 	
-	int current_word_position;
+	int current_word_position = 1;
 	int total_words_added;
 	std::vector<std::string> words_and_score;
 	std::string word1;
@@ -36,11 +36,11 @@ int main(){
 	std::string score;
 	
 	//This while loop will allow the user to enter their words until done
-	while (current_word_position <= total_words_added)
+	while (current_word_position <= answer2)
 	{
 		cout << "Now creating new database entry "
 			<< current_word_position << " of "
-			<< total_words_added << endl;
+			<< answer2 << endl;
 		
 		cout << "When inputting a new entry, please do not use spaces or non alpha-numeric characters.\n";
 		cout << "Please enter the first word: ";
