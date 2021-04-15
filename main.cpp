@@ -16,16 +16,10 @@ int main(){
 	cout << "Would you like to clear your database?" << endl;
 	cin >> answer;
 
-<<<<<<< HEAD
-	if (answer=='y'||'Y'){
-		cout << "Okay, deleting the database!" << endl;
-=======
+
+
 	if (answer=='y'||'Y') {
 		cout << "Okay, deleting the database!" << endl;
-		int answer2;
-		cout << "How many entries would you like to add? ==> ";
-		cin >> answer2;
->>>>>>> 19a4e46c21da3eff6aabf4bcf13dff9a68692044
 	}
 
 	int answer2;
@@ -81,11 +75,7 @@ int main(){
 		cout << "We've finished adding new records to the database.\n";
 	}
 	
-<<<<<<< HEAD
-=======
 
-	
->>>>>>> 19a4e46c21da3eff6aabf4bcf13dff9a68692044
 	return 0;
 	
 }
