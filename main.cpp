@@ -12,21 +12,33 @@ using std::cin;
 using std::string;
 using std::stringstream;
 using std::ifstream;
+using std::ofstream;
 using std::vector;
 using std::left;
 using std::right;
 using std::setw;
-
+using std::remove;
 
 int main() {
-	char answer;
+	string answer;
 	//Welcome message and description of program
 	cout << "Welcome to the Word Association Game database Program!! This program will let you choose two words per entry and assign them a number of how closely or remotely associated they are to each other." << endl;
-	cout << "Would you like to clear your database?" << endl;
+	cout << "Would you like to clear your database? (Y/N): ";
 	cin >> answer;
 
-	if (answer=='y'||'Y') {
+	if (answer == "y" ||"Y") {
 		cout << "Okay, deleting the database!" << endl;
+		std::ofstream ofs;
+			ofs.open("words.db", std::ofstream::out | std::ofstream::trunc);
+			ofs.close();
+	}
+
+	else if (answer == "n" || "N"){
+		cout << "Okay, keeping the database!" << endl;
+	}
+
+	else {
+		cout << "Invalid choice. Please type (Y/N)." << endl;
 	}
 
 	int answer2;
@@ -37,11 +49,11 @@ int main() {
 	//Here the program begins accepting new entries to the database
 	//variables to be used to accept entries and count entry number
 	int current_entry_number = 1;
-	std::vector<std::string> words_and_score;
-	std::string word1;
-	std::string word2;
-	std::string score;
-	
+	vector<string> words_and_score;
+	string word1;
+	string word2;
+	string score;
+
 	//This while loop will allow the user to enter their words until done
 	while (current_entry_number <= answer2)
 	{
@@ -54,25 +66,25 @@ int main() {
 		//messages to tell user which word they're on and input score
 		cout << "Please enter the first word: ";
 		cin >> word1;
-		
+
 		cout << "Please enter the second word: ";
 		cin >> word2;
-		
+
 		cout << "Please enter the point value for this association: ";
 		cin >> score;
-	
+
 		//assigned 3 responses above to a vector
 		words_and_score.push_back(word1 + " " + word2 + " " + score);
 		//keeps track of which entry number we're on
 		current_entry_number++;
 	}
 	//opens and specifies the file for our "entry database"
-	std::ofstream outFile;
-	outFile.open("words.db", std::ios::app);	
-	//for loop that allows the info in the vector to print to file	
+	ofstream outFile;
+	outFile.open("words.db", std::ios::app);
+	//for loop that allows the info in the vector to print to file
 	for (size_t i = 0; i < words_and_score.size(); i++)
 	{
-		std::string s = words_and_score[i];
+		string s = words_and_score[i];
 		outFile << s << endl;
 	}
 	//closes the file
@@ -80,7 +92,7 @@ int main() {
 	//message telling user they've finished inputting entries
 	cout << "We've finished adding new records to the database.\n";
 
-	// Kyla's Part
+// Kyla's Part
   // opening file
   	ifstream ifs;
     ifs.open("words.db");
