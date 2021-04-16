@@ -17,7 +17,6 @@ using std::vector;
 using std::left;
 using std::right;
 using std::setw;
-using std::remove;
 
 int main() {
 	string answer;
@@ -92,7 +91,7 @@ int main() {
 	//message telling user they've finished inputting entries
 	cout << "We've finished adding new records to the database.\n";
 
-// Kyla's Part
+	// Kyla's Part
   // opening file
   	ifstream ifs;
     ifs.open("words.db");
