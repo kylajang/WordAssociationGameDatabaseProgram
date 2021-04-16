@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 using std::cout;
 using std::endl;
@@ -32,44 +33,51 @@ int main() {
 	cout << "How many entries would you like to add? ==> ";
 	cin >> answer2;
 
+	//Stephan's Part
 	//Here the program begins accepting new entries to the database
-
-	/* Ana, I put these variable names for now, I can change them to what
-	you name them in your section or you can use these names if you want */
-
-	int current_word_position = 1;
+	//variables to be used to accept entries and count entry number
+	int current_entry_number = 1;
 	std::vector<std::string> words_and_score;
 	std::string word1;
 	std::string word2;
 	std::string score;
-
+	
 	//This while loop will allow the user to enter their words until done
-	while (current_word_position <= answer2)
+	while (current_entry_number <= answer2)
 	{
+		//message to let user know which entry number we're on
 		cout << "Now creating new database entry "
-			<< current_word_position << " of "
+			<< current_entry_number << " of "
 			<< answer2 << endl;
-
+		//warning user to format entry a specific way
 		cout << "When inputting a new entry, please do not use spaces or non alpha-numeric characters.\n";
+		//messages to tell user which word they're on and input score
 		cout << "Please enter the first word: ";
 		cin >> word1;
-
+		
 		cout << "Please enter the second word: ";
 		cin >> word2;
-
+		
 		cout << "Please enter the point value for this association: ";
 		cin >> score;
-
-		words_and_score.push_back(word1);
-		words_and_score.push_back(" ");
-		words_and_score.push_back(word2);
-		words_and_score.push_back(" ");
-		words_and_score.push_back(score);
-		words_and_score.push_back("\n");
-
-		current_word_position++;
+	
+		//assigned 3 responses above to a vector
+		words_and_score.push_back(word1 + " " + word2 + " " + score);
+		//keeps track of which entry number we're on
+		current_entry_number++;
 	}
-
+	//opens and specifies the file for our "entry database"
+	std::ofstream outFile;
+	outFile.open("words.db", std::ios::app);	
+	//for loop that allows the info in the vector to print to file	
+	for (size_t i = 0; i < words_and_score.size(); i++)
+	{
+		std::string s = words_and_score[i];
+		outFile << s << endl;
+	}
+	//closes the file
+	outFile.close();
+	//message telling user they've finished inputting entries
 	cout << "We've finished adding new records to the database.\n";
 
 	// Kyla's Part
