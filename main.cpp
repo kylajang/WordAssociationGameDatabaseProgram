@@ -28,9 +28,11 @@ int main() {
 	cout << "assign them a number of how closely or remotely associated ";
 	cout << "they are to each other." << endl;
 	//Asking user if they would like to clear their database
+	cout << " " << endl;
 	cout << "Would you like to clear your database? (Y/N): ";
 	cin >> answer;
 
+	// Kyla's Part
 	//depending on the answer Y, N or an invalid input different messages are going to be displayed
 	if (answer== "y" || answer== "Y") {
 		cout << "Okay, deleting the database!" << endl;
@@ -39,6 +41,7 @@ int main() {
 		ofs.close();
 	}
 
+	// Ana's part continues
 	else if (answer== "n" || answer== "N"){
 		cout << "Okay, keeping the database!" << endl;
 	}
@@ -46,15 +49,16 @@ int main() {
 	else {
 		cout << "Invalid choice, closing program!" << endl;
 		return 0;
-	}	
+	}
 
 	//Asking user how many entries they would like to have
 	int answer2;
+	cout << " " << endl;
 	cout << "How many entries would you like to add? ==> ";
 	cin >> answer2;
 
 	//Stephan's Part
-	
+
 	//Here the program begins accepting new entries to the database
 	//variables to be used to accept entries and count entry number
 	int current_entry_number = 1;
@@ -67,11 +71,13 @@ int main() {
 	while (current_entry_number <= answer2)
 	{
 		//message to let user know which entry number we're on
+		cout << " " << endl;
 		cout << "Now creating new database entry "
 			<< current_entry_number << " of "
 			<< answer2 << endl;
 		//warning user to format entry a specific way
-		cout << "When inputting a new entry, please do not use ";
+		cout << " " << endl;
+		cout << "*** Note: When inputting a new entry, please do not use ";
 		cout << "spaces or non alpha-numeric characters." << endl;
 		//messages to tell user which word they're on and input score
 		cout << "Please enter the first word: ";
@@ -88,11 +94,11 @@ int main() {
 		//keeps track of which entry number we're on
 		current_entry_number++;
 	}
-	
+
 	//opens and specifies the file for our "entry database"
 	ofstream outFile;
 	outFile.open("words.db", std::ios::app);
-	
+
 	//for loop that allows the info in the vector to print to file
 	for (size_t i = 0; i < words_and_score.size(); i++)
 	{
@@ -102,12 +108,13 @@ int main() {
 
 	//closes the file
 	outFile.close();
-	
+
 	//message telling user they've finished inputting entries
+	cout << " " << endl;
 	cout << "We've finished adding new records to the database.\n";
 
 	// Kyla's Part mixed with Ana's work
-	
+
 	// opening file
   	ifstream ifs;
 	ifs.open("words.db");
@@ -123,8 +130,9 @@ int main() {
 	string num;
 	int counter=0,counterTwo=0;
 	float average,sum=0;
-	
+
 	// Printing out a message to explain what the program is printing
+	cout << " " << endl;
 	cout << "Printing all records: " << endl;
 	// read chars from file one at a time
 	while(ifs.get(c)) {
@@ -160,14 +168,15 @@ int main() {
 		word.clear();
 		}
 	}
+	// Ana's Part
 	//Printing the summary of database that includes the amount of entries and average
-	cout<<endl;
+	cout<< " "<<endl;
 	cout<<"Printing final summary of the database:"<<endl;
 	average=sum/counterTwo;
 	cout<<"Total entries: "<<counterTwo<<endl;
 	cout << std::fixed;
 	cout<<"Average score: "<<setprecision(2)<<average<<endl;
-	
+
   return 0;
 
 }
