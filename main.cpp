@@ -113,8 +113,7 @@ int main() {
 	cout << " " << endl;
 	cout << "We've finished adding new records to the database.\n";
 
-	// Kyla's Part mixed with Ana's work
-
+	// Kyla's Part
 	// opening file
   	ifstream ifs;
 	ifs.open("words.db");
