@@ -17,7 +17,9 @@ using std::vector;
 using std::left;
 using std::right;
 using std::setw;
+using std::setprecision;
 
+//Ana's Part
 int main() {
 	string answer;
 	//Welcome message and description of program
@@ -25,29 +27,28 @@ int main() {
 	cout << "This program will let you choose two words per entry and ";
 	cout << "assign them a number of how closely or remotely associated ";
 	cout << "they are to each other." << endl;
+	//Asking user if they would like to clear their database
 	cout << "Would you like to clear your database? (Y/N): ";
 	cin >> answer;
 
-<<<<<<< HEAD
-	if (answer=='y'||'Y') {
-		cout << "Okay, deleting the database!" << endl;
-=======
-	if (answer == "y" ||"Y") {
+	//depending on the answer Y, N or an invalid input different messages are going to be displayed
+	if (answer== "y" || answer== "Y") {
 		cout << "Okay, deleting the database!" << endl;
 		std::ofstream ofs;
 		ofs.open("words.db", std::ofstream::out | std::ofstream::trunc);
 		ofs.close();
 	}
 
-	else if (answer == "n" || "N"){
+	else if (answer== "n" || answer== "N"){
 		cout << "Okay, keeping the database!" << endl;
 	}
 
 	else {
-		cout << "Invalid choice. Please type (Y/N)." << endl;
->>>>>>> 61438aa2e72882f7ad25fc64cd7b6e0a08ceec8d
-	}
+		cout << "Invalid choice, closing program!" << endl;
+		return 0;
+	}	
 
+	//Asking user how many entries they would like to have
 	int answer2;
 	cout << "How many entries would you like to add? ==> ";
 	cin >> answer2;
@@ -98,19 +99,14 @@ int main() {
 		string s = words_and_score[i];
 		outFile << s << endl;
 	}
-	
-<<<<<<< HEAD
 
-	return 0;
-=======
 	//closes the file
 	outFile.close();
 	
 	//message telling user they've finished inputting entries
 	cout << "We've finished adding new records to the database.\n";
 
-	// Kyla's Part
->>>>>>> 61438aa2e72882f7ad25fc64cd7b6e0a08ceec8d
+	// Kyla's Part mixed with Ana's work
 	
 	// opening file
   	ifstream ifs;
@@ -122,11 +118,29 @@ int main() {
 	// char to read from file
 	char c;
 	int i = 0;
+
+	//Creating variables for counter, sum, and average
+	string num;
+	int counter=0,counterTwo=0;
+	float average,sum=0;
+	
 	// Printing out a message to explain what the program is printing
 	cout << "Printing all records: " << endl;
 	// read chars from file one at a time
 	while(ifs.get(c)) {
 		string s(1,c);
+		if(c=='\n'){
+	        counter=0;
+	        counterTwo++;
+	        sum=sum+stof(num);
+	        num.clear();
+	    }
+	    else if(counter==2){
+	        num.append(s);
+	    }
+	    else if(c==' '){
+	        counter++;
+	    }
 	// if char is not a space or newline add it to word variable
 		if (s.compare(" ") && s.compare("\n")){
 		word.append(s);
@@ -137,7 +151,7 @@ int main() {
 		word.clear();
 		}
 		/* if char is newline, add word to list, reset count,
-		clear word, and print out formatted words*/
+		clear word, and print ouat formatted words*/
 		else {
 		v[i++] = word;
 		i = 0;
@@ -146,6 +160,13 @@ int main() {
 		word.clear();
 		}
 	}
+	//Printing the summary of database that includes the amount of entries and average
+	cout<<endl;
+	cout<<"Printing final summary of the database:"<<endl;
+	average=sum/counterTwo;
+	cout<<"Total entries: "<<counterTwo<<endl;
+	cout << std::fixed;
+	cout<<"Average score: "<<setprecision(2)<<average<<endl;
 	
   return 0;
 
